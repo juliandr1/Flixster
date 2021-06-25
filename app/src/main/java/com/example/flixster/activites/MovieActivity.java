@@ -38,6 +38,7 @@ public class MovieActivity extends AppCompatActivity {
         // Unwrap the movie
         movie = Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
 
+        Log.e("MovieActivity", movie.getTitle());
         // set the title and overview
         tvTitleAct.setText(movie.getTitle());
         tvOverviewAct.setText(movie.getOverview());
