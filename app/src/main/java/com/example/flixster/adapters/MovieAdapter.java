@@ -24,6 +24,8 @@ import org.parceler.Parcels;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
     Context context;
@@ -102,7 +104,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                 imageUrl = movie.getPosterPath();
             }
 
-            Glide.with(context).load(imageUrl).placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound).into(ivPoster);
+            Glide.with(context).load(imageUrl).transform(new RoundedCornersTransformation(20, 10)).placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound).into(ivPoster);
 
         }
 

@@ -11,10 +11,7 @@ import java.util.List;
 @Parcel // class is parcelable
 public class Movie {
 
-    String backdropPath;
-    String posterPath;
-    String title;
-    String overview;
+    String backdropPath, posterPath, title, overview, id;
     Double vote_average;
 
     public Movie(JSONObject jsonObject) throws JSONException {
@@ -22,6 +19,7 @@ public class Movie {
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
+        id = jsonObject.getString("id");
         vote_average = jsonObject.getDouble("vote_average");
     }
     // Required for parceler
